@@ -1,10 +1,10 @@
 # Site settings
 title: Ariza的博客
-email: suyan0830@gmail.com
+email: 1559407944@qq.com
 description: > # this means to ignore newlines until "baseurl:"
   Ariza的博客
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: http://ariza.org # the base hostname & protocol for your site
+url: http://lsplf.github.ip # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
 author: Ariza Peng
 
