@@ -14,24 +14,15 @@ filter: 'category'
 recent_num: 20
 
 # Social account
-twitter: 
-weibo: 
+twitter: Ariza Peng
+weibo: Ariza Peng
 github: lsplf
-instagram: 
-linkedin: 
+instagram: Ariza Peng
+linkedin: Ariza Peng
 
 # avatar and Favicon
-avatar: 
-favicon:
-
-# disqus config
-# disqus:
-#  shortname: suyan-zh
-
-# google analytics config
-# ga:
-#  id: UA-54767140-1
-#  url: yansu.org
+avatar: img/config/zilaiye.ico
+favicon: img/config/zilaiye.ico
 
 # Build settings
 permalink: /:year/:month/:day/:title.html

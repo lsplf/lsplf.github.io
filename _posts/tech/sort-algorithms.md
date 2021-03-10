@@ -5,7 +5,8 @@ category: 技术
 tags: 算法
 keywords: 算法,排序,Sort,Algorithm
 ---
-
+转载自：https://suyan.github.io/2015/09/07/sort-algorithms.html
+---
 排序算法是非常常见也非常基础的算法，以至于大部分情况下它们都被集成到了语言的辅助库中。排序算法虽然已经可以很方便的使用，但是理解排序算法可以帮助我们找到解题的方向。
 
 ## 1. 冒泡排序 (Bubble Sort)
