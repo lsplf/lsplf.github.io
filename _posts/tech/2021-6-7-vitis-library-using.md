@@ -62,7 +62,12 @@ export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/lib
 直接拷贝到工作目录就可以.注意，工作目录一定要是vitis_libraries下面的tests目录，否则会报错，如我本次例程   
 的工作目录为："/home/ariza/project/revision/Vitis_Libraries/Vitis_Libraries-master/vision/L1/tests/resize/resize_DOWN_BILINEAR_RO")
 4. 编译完成会在当前目录生成一个resize.proj,这是一个hls的工程文件，使用hls打开就可以看到相应的结果。
-在hls界面上选择Run->export rtl就可以生成IP文件。
+在hls界面上选择Run->export rtl就可以生成IP文件.
+5. 运行co-sim仿真：打开hls软件，在xxx_accl设计源文件和xxx_tb文件最开始处添加
+#include "/home/ariza/software/vitis/2020.1/Vitis/2020.1/include/gmp.h"  
+显示包含这个头文件，这样才不会报错。注意，一定是第一行，不能在任何头文件后。否则在编译过程中会找到系统自带的gmp.h，  
+会报错。参考链接：https://forums.xilinx.com/t5/High-Level-Synthesis-HLS/Vivado-2015-3-HLS-Bug-gmp-h/td-p/661141
+
 
 
 ## 四、参考
