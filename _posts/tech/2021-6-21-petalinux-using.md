@@ -14,7 +14,7 @@
 此时运行sudo sysctl -n -w fs.inotify.max_user_watches=524288。然后再重新运行petalinux-config使其编译即可。
 4. 编译：执行petalinux-build。可以编译内核，uboot和根文件系统等。
 5. 打包固件：执行以下命令：   
-   petalinux-package --boot --fsbl images/linux/zynqmp_fsbl.elf --u-boot=images/linux/u-boot.elf --pmufw --atf –fpga images/linux/system.bit   
+   petalinux-package --boot --fsbl images/linux/zynqmp_fsbl.elf --u-boot=images/linux/u-boot.elf --pmufw --fpga images/linux/system.bit   
    然后在工程目录下image/linux中可以找到BOOT.bin,image.ub,rootfs.tar.gz，这三个文件就是我们要用到的制作启动SD卡的文件。
 6. 制作SD卡启动镜像：
 *  进行SD卡分区，一个分区为fat32格式，大小约为1G；另一个分区为ext4格式，大小约为14G。  
@@ -26,6 +26,6 @@
 2. [[米尔FZ3深度学习计算卡]petalinux环境搭建与petalinux编译](https://www.cirmall.com/bbs/thread-197656-1-1.html)
 
 
-     
+​     
 
    
