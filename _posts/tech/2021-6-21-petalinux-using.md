@@ -1,4 +1,7 @@
-### 编译petalinux的步骤
+### petalinux学习
+
+#### 一、编译步骤
+
 1. 创建工程目录,如hello。拷贝zcu102.bsp到hello目录。  
    利用zcu102.bsp创建工程：petalinux-create -t project -s zcu102.bsp
 2. 配置离线编译环境，运行petalinux-config。进行如下设置：
@@ -17,4 +20,12 @@
 *  进行SD卡分区，一个分区为fat32格式，大小约为1G；另一个分区为ext4格式，大小约为14G。  
 *  将生成的BOOT.bin与image.ub文件复制到fat32分区，rootfs.tar.gz解包到ext4分区。解包命令为：  
    sudo tar -xvf petalinux/hello/xilinx-zcu102-2020.1/images/linux/rootfs.tar.gz -C /media/ariza/挂载目录
-7. 拔出sd卡，设置zcu102从sd卡启动。sw6为off off off on(4321)。串口为COM9。linux系统账户密码为root和root
+7. 拔出sd卡，设置zcu102从sd卡启动。sw6为off off off on(4321)。串口为COM9。linux系统账户密码为root和root   
+#### 二、参考
+1. [PetaLinux 工程的离线编译](https://www.cnblogs.com/hankfu/p/14074595.html)
+2. [[米尔FZ3深度学习计算卡]petalinux环境搭建与petalinux编译](https://www.cirmall.com/bbs/thread-197656-1-1.html)
+
+
+     
+
+   
