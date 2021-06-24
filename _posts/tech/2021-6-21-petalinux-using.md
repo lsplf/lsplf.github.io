@@ -31,21 +31,32 @@
    petalinux-build -c device-tree
    然后重新将新生成的device_tree打包进image.ub使用命令：
    petalinux-build -x package
+   
 2. 修改文件系统从SD卡挂载：运行petalinux-config命令，选择Image Packaging Configration --> Root filesystem type，  
    选择SD卡。然后保存退出，再执行petalinux-build。
+   
 3. 重新编译rootfs:
    petalinux-config -c rootfs
    petalinux-build -c rootfs -x do_cleanall   
    petalinux-build -c rootfs
+   
 4. 重新编译kernel:
    petalinux-build -c kernel -x cleanall   
    petalinux-build -c kernel
+   
 5. 常用命令： https://www.programmersought.com/article/51752047495/
+
 6. 系统启动后，使用ifconfig查看ip地址。如果不是192.168.1.10那么，将其修改为这个。  
-   设置本地的网卡地址为192.168.1.11。然后使用filezila进行传输文件。命令为  
-   ifconfig eth0 192.168.1.11 netmask 255.255.255.0  
+   设置本地的网卡地址为192.168.1.10。然后使用filezila进行传输文件。命令为  
+   ifconfig eth0 192.168.1.10 netmask 255.255.255.0 。PC主机设置2为192.168.1.11。
+   
 7. 编译petalinux sdk: 使用以下命令：  
    petalinux-build --sdk
+   
+   制作系统文件：
+   
+   petalinux-package --sysroot
+   
 8. boot参数：console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlyprintk rootfstype=ext4 rootwait devtmpfs.mount=0 
 #### 三、Open Source Linux移植
 1. rootfs从SD卡启动只有boot.scr和设备树有关，与Boot.BIN和kernel无关。

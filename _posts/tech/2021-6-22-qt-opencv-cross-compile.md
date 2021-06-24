@@ -10,7 +10,7 @@
 1. 下载opencv源码。vitis 2020.1对应的opencv源码为3.4.3版本
 2. 安装cmake: sudo apt-get install cmake   
 3. 建立zynqmp.toolchain.cmake文件，内容如下
-   ```cmake
+   ```
     set( CMAKE_SYSTEM_NAME Linux )
     set( CMAKE_SYSTEM_PROCESSOR arm )
     set( CMAKE_C_COMPILER aarch64-linux-gnu-gcc )
@@ -21,7 +21,7 @@
 4. 建立安装目录：mkdir ~/software/opencv3.4.3_zynq。
 5. 在opencv-3.4.3根目录下创建build目录，并进入build目录。
 6. 在build目录下执行如下命令：
-   ```shell
+   ```
    cmake -DBUILD_EXAMPLES=1 -DBUILD_ZLIB=1 -DBUILD_JPEG=1   
    -DCMAKE_TOOLCHAIN_FILE=../platforms/linux/zynqmp.toolchain.cmake    
    -DWITH_FFMPEG=0 -DWITH_PNG=0 -DWITH_1394=0 -DWITH_GTK=0 -DWITH_GTK_2_X=0   
@@ -38,12 +38,12 @@
    ./qt-opensource-linux-x64-5.13.2.run
 3. 交叉编译:
 * 创建编译和安装目录:   
-  ```shell
+  ```
   mkdir ~/software/Qt5.13.2_zynq/build   
   mkdir ~/software/Qt5.13.2_zynq/install
   ```
 * 设置编译的变量,在QT源码根目录下执行： 
-  ```shell
+  ```
   export CROSS_COMPILE=aarch64-linux-gnu-a
   export PATH=/home/ariza/software/vitis/2020.1/Vitis/2020.1/gnu/aarch64/lin/aarch64-linux/bin:$PATH 
   export ZYNQ_QT_BUILD=/home/ariza/software/Qt5.13.2_zynq/build
@@ -54,11 +54,7 @@
   在[Qt & Qwt Build Instructions (Qt 5.4.2, Qwt 6.1.2)](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842110/Qt+Qwt+Build+Instructions+Qt+5.4.2+Qwt+6.1.2#Qt&QwtBuildInstructions(Qt5.4.2,Qwt6.1.2)-BuildandInstall.1)   
   下载qmake.conf和qplatformdefs.h。原链接文件带有版本号，更改名字去掉版本号，并且修改qmke.conf里面的内容，   
   里面为交叉编译工具链的前缀。内容如下：   
-  ```shell
-    #
-    # qmake configuration for building with aarch64-linux-gnu-g++
-    #
-
+  ```
     MAKEFILE_GENERATOR      = UNIX
     CONFIG                 += incremental
     QMAKE_INCREMENTAL_STYLE = sublib
@@ -84,7 +80,7 @@
   mkdir -p qtbase/mkspecs/aarch64-linux-gnu-g++
   拷贝qmake.conf和qplatformdefs.h到这个目录下。
 * 进行配置：
-  ```shell
+  ```
   ./configure -xplatform aarch64-linux-gnu-g++ -opensource -no-opengl -prefix $ZYNQ_QT_INSTALL
   ```
 * 编译： make -j4
