@@ -85,3 +85,8 @@
   ```
 * 编译： make -j4
 * 安装： make install
+
+#### 四、参考
+1. [Zynq7000开发系列-6(QT开发环境搭建：Ubuntu、Zynq)](https://www.cnblogs.com/wmxfd/p/zynq7000_development_6_qt_development_environment_establishment_fot_ubuntu_and_zynq.html)
+2. [zynq-7000学习笔记(十四)——移植openCV](https://blog.csdn.net/luotong86/article/details/52608231)
+3. [zcu102_A_PetaLinux运行Qt程序](https://blog.csdn.net/botao_li/article/details/86712517)
