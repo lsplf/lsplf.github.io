@@ -54,7 +54,7 @@
   在[Qt & Qwt Build Instructions (Qt 5.4.2, Qwt 6.1.2)](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18842110/Qt+Qwt+Build+Instructions+Qt+5.4.2+Qwt+6.1.2#Qt&QwtBuildInstructions(Qt5.4.2,Qwt6.1.2)-BuildandInstall.1)   
   下载qmake.conf和qplatformdefs.h。原链接文件带有版本号，更改名字去掉版本号，并且修改qmke.conf里面的内容，   
   里面为交叉编译工具链的前缀。内容如下：   
-  ```make
+  ```shell
     #
     # qmake configuration for building with aarch64-linux-gnu-g++
     #
@@ -84,6 +84,8 @@
   mkdir -p qtbase/mkspecs/aarch64-linux-gnu-g++
   拷贝qmake.conf和qplatformdefs.h到这个目录下。
 * 进行配置：
+  ```shell
   ./configure -xplatform aarch64-linux-gnu-g++ -opensource -no-opengl -prefix $ZYNQ_QT_INSTALL
+  ```
 * 编译： make -j4
 * 安装： make install
